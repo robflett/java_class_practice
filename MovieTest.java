@@ -19,6 +19,24 @@ public class MovieTest {
 
   @Test
   public void castStartsEmpty(){
-    assertEquals(0, movie.castSize() );
+    assertEquals(0, movie.count() );
+  }
+
+  @Test
+  public void canAddActors() {
+    movie.add(new Actor() );
+    assertEquals(1, movie.count() );
+  }
+
+  @Test
+  public void isFull(){
+
+    for (int i = 0; i < 9; i++) {
+
+      movie.add(actor);
+
+    }
+
+    assertEquals(true, movie.isFull() );
   }
 }

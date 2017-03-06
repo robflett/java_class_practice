@@ -13,15 +13,29 @@ public String getName() {
   return this.name;
 }
 
-public int castSize() {
-  int count = 0;
+public int count() {
+
+  int actorcount = 0;
   for (Actor actor : cast) {
     if (actor != null) {
-      count = count++;
+      actorcount = actorcount + 1;
     }
   }
-  return count;
+  return actorcount;
 }
+
+public void add(Actor actor) {
+  if (isFull() ) {
+    return;
+  }
+  int cast_member = this.count();
+  cast[cast_member] = actor;
+}
+
+public boolean isFull() {
+  return this.count() == cast.length;
+}
+
 
 
 }
